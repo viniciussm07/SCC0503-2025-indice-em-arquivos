@@ -1,0 +1,21 @@
+declarar variaveis
+    criar índices
+        primário
+        secundário
+loop {
+    receber input
+    gerencia input
+}
+
+gerencia input {
+    bool create
+    classe manga read
+    classe manga update
+    classe manga delete
+}
+
+iniciar com o crud como CLI em conjunto
+se sobrar tempo implementar GUI
+
+1. remover CLI e implementar API
+2. configurações GUI (https://kitsu.io/api/edge/manga?filter[text]=Frieren%3A%20Beyond%20Journey%27s%20End)
