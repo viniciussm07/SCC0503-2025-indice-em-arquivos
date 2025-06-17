@@ -14,6 +14,8 @@ gerencia input {
     classe manga delete
 }
 
+------ TODO ------
+
 iniciar com o crud como CLI em conjunto
 se sobrar tempo implementar GUI
 
