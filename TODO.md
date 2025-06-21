@@ -23,6 +23,7 @@
 - [ ] Criar formulário para cadastro/edição de mangá
 - [ ] Listar mangás cadastrados (com busca por ISBN e título)
 - [ ] Adicionar botão de exclusão com confirmação
+- [ ] Adicionar botão de compactação do mangass.txt
 - [ ] Exibir detalhes do mangá selecionado (incluindo imagem)
 - [ ] Exibir mensagens de sucesso/erro para o usuário
 
