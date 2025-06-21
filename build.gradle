@@ -3,17 +3,14 @@ plugins {
     id 'application'
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
+sourceCompatibility = '17'
+targetCompatibility = '17'
 
 mainClassName = 'app.Main'
 
 dependencies {
-    // Qt Jambi (ajuste a versão conforme necessário)
-    implementation 'io.qt:qtjambi:6.5.0'
-    // HttpClient já incluso no Java 11+, não precisa adicionar
+    implementation 'org.openjfx:javafx-controls:17.0.10'
+    implementation 'org.openjfx:javafx-fxml:17.0.10'
 }
 
 repositories {
