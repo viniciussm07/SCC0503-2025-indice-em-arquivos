@@ -15,7 +15,7 @@
 - [x] Implementar a gravação e leitura do índice secundário (`data/indice_secundario.idx`)
 - [ ] Carregar os índices ao iniciar o programa e salvar ao modificar
 
-## 3. Interface Gráfica (Qt Jambi)
+## 3. Interface Gráfica (JavaFX ou outra)
 
 - [ ] Criar tela principal com menu ou abas para CRUD
 - [ ] Criar formulário para cadastro/edição de mangá
