@@ -10,6 +10,20 @@
 *.iws
 .vscode/
 
+# Gradle
+/.gradle/
+/gradle/
+*.log
+
+# Wrapper (opcional, remova se quiser versionar gradlew)
+# /gradlew
+# /gradlew.bat
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+*~
+
 # Imagens baixadas
 src/main/resources/imagens/
 
