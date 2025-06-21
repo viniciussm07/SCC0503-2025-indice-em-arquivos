@@ -11,8 +11,8 @@
 
 ## 2. Gerenciamento dos Arquivos de Índice
 
-- [ ] Implementar a gravação e leitura do índice primário (`data/indice_primario.idx`)
-- [ ] Implementar a gravação e leitura do índice secundário (`data/indice_secundario.idx`)
+- [x] Implementar a gravação e leitura do índice primário (`data/indice_primario.idx`)
+- [x] Implementar a gravação e leitura do índice secundário (`data/indice_secundario.idx`)
 - [ ] Carregar os índices ao iniciar o programa e salvar ao modificar
 
 ## 3. Interface Gráfica (Qt Jambi)

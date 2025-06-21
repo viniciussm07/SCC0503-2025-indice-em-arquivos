@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.io.*;
 
 public class SecondaryIndex {
     private Map<String, Set<String>> index = new HashMap<>(); // título -> conjunto de ISBNs
@@ -28,5 +29,37 @@ public class SecondaryIndex {
 
     public Map<String, Set<String>> getIndex() {
         return index;
+    }
+
+    // Salva o índice em um arquivo txt padrão (título;ISBN1,ISBN2,...)
+    public void salvarParaArquivo(String caminho) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(caminho))) {
+            for (Map.Entry<String, Set<String>> entry : index.entrySet()) {
+                String titulo = entry.getKey();
+                String isbns = String.join(",", entry.getValue());
+                writer.write(titulo + ";" + isbns);
+                writer.newLine();
+            }
+        }
+    }
+
+    // Carrega o índice de um arquivo txt padrão (título;ISBN1,ISBN2,...)
+    public void carregarDeArquivo(String caminho) throws IOException {
+        index.clear();
+        try (BufferedReader reader = new BufferedReader(new FileReader(caminho))) {
+            String linha;
+            while ((linha = reader.readLine()) != null) {
+                String[] partes = linha.split(";", 2);
+                if (partes.length == 2) {
+                    String titulo = partes[0].trim();
+                    String[] isbns = partes[1].split(",");
+                    Set<String> isbnSet = new HashSet<>();
+                    for (String isbn : isbns) {
+                        isbnSet.add(isbn.trim());
+                    }
+                    index.put(titulo, isbnSet);
+                }
+            }
+        }
     }
 } 
