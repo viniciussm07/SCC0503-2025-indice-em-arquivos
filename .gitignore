@@ -1,0 +1,18 @@
+# Build
+/build/
+/out/
+*.class
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Imagens baixadas
+src/main/resources/imagens/
+
+# Dados gerados
+/data/*.dat
+/data/*.idx 

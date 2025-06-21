@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+mainClassName = 'app.Main'
+
+dependencies {
+    // Qt Jambi (ajuste a versão conforme necessário)
+    implementation 'io.qt:qtjambi:6.5.0'
+    // HttpClient já incluso no Java 11+, não precisa adicionar
+}
+
+repositories {
+    mavenCentral()
+} 
