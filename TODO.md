@@ -2,7 +2,7 @@
 
 ## 1. CRUD dos Mangás
 
-- [ ] Implementar a escrita de um novo mangá no arquivo `data/mangas.dat`
+- [ ] Implementar a escrita de um novo mangá no arquivo `mangas.txt`
 - [ ] Implementar a leitura de mangá(s) por ISBN (índice primário)
 - [ ] Implementar a leitura de mangá(s) por título (índice secundário)
 - [ ] Implementar a atualização de um mangá existente

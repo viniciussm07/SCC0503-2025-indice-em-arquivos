@@ -23,18 +23,18 @@ SCC0503-2025-indice-em-arquivos/
 │   │       └── imagens/         # Imagens baixadas
 │
 ├── data/
-│   ├── mangas.dat               # Dados dos mangás (não usar mangas.txt)
 │   ├── indice_primario.idx      # Índice primário (ISBN)
 │   └── indice_secundario.idx    # Índice secundário (título)
 │
+├── mangas.txt                   # Dados dos mangás
 ├── README.md
 ├── build.gradle                # Gerenciamento de dependências
 └── .gitignore
 ```
 
 ## Observações
-- O programa **NÃO** deve carregar o `mangas.txt`.
-- Os dados e índices serão gerenciados nos arquivos em `data/`.
+- O programa **DEVE** usar o arquivo `mangas.txt` para leitura e escrita dos dados dos mangás.
+- Os índices serão gerenciados nos arquivos em `data/`.
 - A interface gráfica será feita com Qt Jambi.
 - Imagens dos mangás serão baixadas via API e salvas em `src/main/resources/imagens/`.
 
