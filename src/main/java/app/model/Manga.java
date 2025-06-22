@@ -15,6 +15,7 @@ public class Manga {
     private int qtdVolumes;
     private int qtdVolumesAdquiridos;
     private List<Integer> volumesAdquiridos;
+    private boolean removido; // Campo para remoção lógica
 
     public Manga(String isbn, String titulo, String autores, int anoInicio, Integer anoFim, String genero, String revista, String editora, int anoEdicao, int qtdVolumes, int qtdVolumesAdquiridos, List<Integer> volumesAdquiridos) {
         this.isbn = isbn;
@@ -29,6 +30,7 @@ public class Manga {
         this.qtdVolumes = qtdVolumes;
         this.qtdVolumesAdquiridos = qtdVolumesAdquiridos;
         this.volumesAdquiridos = volumesAdquiridos;
+        this.removido = false; // Por padrão, não está removido
     }
 
     // Getters e setters
@@ -56,4 +58,39 @@ public class Manga {
     public void setQtdVolumesAdquiridos(int qtdVolumesAdquiridos) { this.qtdVolumesAdquiridos = qtdVolumesAdquiridos; }
     public List<Integer> getVolumesAdquiridos() { return volumesAdquiridos; }
     public void setVolumesAdquiridos(List<Integer> volumesAdquiridos) { this.volumesAdquiridos = volumesAdquiridos; }
+    public boolean isRemovido() { return removido; }
+    public void setRemovido(boolean removido) { this.removido = removido; }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        if (removido) {
+            sb.append("=== ").append(titulo).append(" (REMOVIDO) ===\n");
+        } else {
+            sb.append("=== ").append(titulo).append(" ===\n");
+        }
+        sb.append("ISBN: ").append(isbn).append("\n");
+        sb.append("Autores: ").append(autores).append("\n");
+        sb.append("Período: ").append(anoInicio);
+        if (anoFim != null) {
+            sb.append(" - ").append(anoFim);
+        } else {
+            sb.append(" - Em andamento");
+        }
+        sb.append("\n");
+        sb.append("Gênero: ").append(genero).append("\n");
+        sb.append("Revista: ").append(revista).append("\n");
+        sb.append("Editora: ").append(editora).append(" (").append(anoEdicao).append(")\n");
+        sb.append("Volumes: ").append(qtdVolumesAdquiridos).append("/").append(qtdVolumes);
+        if (qtdVolumesAdquiridos > 0) {
+            sb.append(" (").append(String.format("%.1f", (double)qtdVolumesAdquiridos/qtdVolumes * 100)).append("% completo)");
+        }
+        sb.append("\n");
+        if (qtdVolumesAdquiridos > 0) {
+            sb.append("Volumes adquiridos: ").append(volumesAdquiridos).append("\n");
+        } else {
+            sb.append("Nenhum volume adquirido ainda.\n");
+        }
+        return sb.toString();
+    }
 } 

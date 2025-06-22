@@ -54,10 +54,16 @@ public class PrimaryIndex {
             String linha;
             long offset = 0;
             while ((linha = raf.readLine()) != null) {
-                String[] partes = linha.split(";", 2); // ISBN é o primeiro campo
-                if (partes.length > 0) {
-                    String isbn = partes[0].trim();
-                    index.put(isbn, offset);
+                // Converter encoding se necessário
+                linha = new String(linha.getBytes("ISO-8859-1"), java.nio.charset.StandardCharsets.UTF_8);
+                
+                // Verificar se o registro não foi removido logicamente
+                if (!linha.trim().startsWith("*")) {
+                    String[] partes = linha.split(";", 2); // ISBN é o primeiro campo
+                    if (partes.length > 0) {
+                        String isbn = partes[0].trim();
+                        index.put(isbn, offset);
+                    }
                 }
                 offset = raf.getFilePointer();
             }

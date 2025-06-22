@@ -46,7 +46,7 @@ public class SecondaryIndex {
     // Carrega o índice de um arquivo txt padrão (título;ISBN1,ISBN2,...)
     public void carregarDeArquivo(String caminho) throws IOException {
         index.clear();
-        try (BufferedReader reader = new BufferedReader(new FileReader(caminho))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(caminho, java.nio.charset.StandardCharsets.UTF_8))) {
             String linha;
             while ((linha = reader.readLine()) != null) {
                 String[] partes = linha.split(";", 2);
@@ -58,6 +58,25 @@ public class SecondaryIndex {
                         isbnSet.add(isbn.trim());
                     }
                     index.put(titulo, isbnSet);
+                }
+            }
+        }
+    }
+
+    // Gera o índice secundário a partir do arquivo de dados (mangas.txt)
+    public void gerarIndiceDeArquivoDeDados(String caminhoMangas) throws IOException {
+        index.clear();
+        try (BufferedReader reader = new BufferedReader(new FileReader(caminhoMangas))) {
+            String linha;
+            while ((linha = reader.readLine()) != null) {
+                // Verificar se o registro não foi removido logicamente
+                if (!linha.trim().startsWith("*")) {
+                    String[] partes = linha.split(";", 3); // título é o segundo campo
+                    if (partes.length > 1) {
+                        String titulo = partes[1].trim();
+                        String isbn = partes[0].trim();
+                        add(titulo, isbn);
+                    }
                 }
             }
         }
