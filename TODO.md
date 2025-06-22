@@ -4,17 +4,17 @@
 
 - [x] Implementar a gravação e leitura do índice primário (`data/indice_primario.idx`)
 - [x] Implementar a gravação e leitura do índice secundário (`data/indice_secundario.idx`)
-- [ ] Carregar os índices ao iniciar o programa e salvar ao modificar
+- [x] Carregar os índices ao iniciar o programa e salvar ao modificar
 
 ## 2. CRUD dos Mangás
 
-- [ ] Implementar a escrita de um novo mangá no arquivo `mangas.txt`
-- [ ] Implementar a leitura de mangá(s) por ISBN (índice primário)
-- [ ] Implementar a leitura de mangá(s) por título (índice secundário)
-- [ ] Implementar a atualização de um mangá existente (remover lógicamente adicionando '*' no início da linha correspondente e adicionar uma linha ao final do arquivo com o mangá editado)
-- [ ] Implementar a exclusão (lógica) de um mangá (com confirmação)
-- [ ] Implementar a compactação do arquivo `mangas.txt` (remover de fato as linhas removidas logicamente e atualizar os índices)
-- [ ] Garantir que os índices primário e secundário sejam atualizados em todas as operações
+- [x] Implementar a escrita de um novo mangá no arquivo `mangas.txt`
+- [x] Implementar a leitura de mangá(s) por ISBN (índice primário)
+- [x] Implementar a leitura de mangá(s) por título (índice secundário)
+- [x] Implementar a atualização de um mangá existente (remover lógicamente adicionando '*' no início da linha correspondente e adicionar uma linha ao final do arquivo com o mangá editado)
+- [x] Implementar a exclusão (lógica) de um mangá (com confirmação)
+- [x] Implementar a compactação do arquivo `mangas.txt` (remover de fato as linhas removidas logicamente e atualizar os índices)
+- [x] Garantir que os índices primário e secundário sejam atualizados em todas as operações
 
 
 ## 3. Interface Gráfica (JavaFX ou outra)
